@@ -1,0 +1,19 @@
+body{
+    background-color: rgba(0, 0, 0, 0.651);
+}
+h1, p{
+    text-align: center;
+}
+
+li:hover{
+    background-color: green;
+}
+li:active{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+ul{
+    list-style: none ;
+}
+ol{
+    list-style: none;
+}
