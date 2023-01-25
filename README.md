@@ -1,7 +1,6 @@
 # trybe-exercicios
 Meu repositório de exercícios na trybe.
 
-## Baixe o conteúdo com esse passo a passo:
-
-## Execute o conteúdo com esse passo a passo:
+## AVISO:   
+Os exercicios que estão com forma de comentario são as partes da atividade de cada atividade, principalmente na parte de javascript em que eu precisei utilizar a mesma variavel/array pra exercicios diversos, então apenas apague o que estiver escrito  /* */
 
