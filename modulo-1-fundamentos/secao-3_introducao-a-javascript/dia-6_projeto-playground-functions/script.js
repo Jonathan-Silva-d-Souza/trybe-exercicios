@@ -126,4 +126,90 @@ const techList = (array, nome) => {
   }
   return tecnologia;
 }
-console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'],'Jonathan'));
+
+// Requisito 11:
+
+const arrayEmObjetoOcorrencias = (array) => {
+  const objArray = {};
+  for (const num of array) {
+    if (objArray[num] === undefined) {
+      objArray[num] = 1;
+    } else {
+      objArray[num] += 1;
+    }
+  }
+  return objArray;
+};
+
+const numeroRepete = (obj) => {
+  for (const num in obj) {
+    if (obj[num] > 2) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const verificaDigitosInvalidos = (array) => {
+  let mensagem = '';
+  const max = Math.max(...array);
+  const min = Math.min(...array);
+  if (max > 9 || min < 0) {
+    mensagem = 'não é possível gerar um número de telefone com esses valores';
+  }
+  const obj = arrayEmObjetoOcorrencias(array);
+  if (numeroRepete(obj)) {
+    mensagem = 'não é possível gerar um número de telefone com esses valores';
+  }
+  return mensagem;
+}
+
+const verificaErrosArrayPhone = (array) => {
+  let mensagem = '';
+  if (array.length !== 11) {
+    mensagem = 'Array com tamanho incorreto.';
+  } else {
+    mensagem = verificaDigitosInvalidos(array);
+  }
+  return mensagem;
+}
+
+const generatePhoneNumber = (array) => {
+  let resultado = verificaErrosArrayPhone(array);
+  if (resultado.length < 1) {
+    let strModelo = '(xx) xxxxx-xxxx';
+    for (const digito of array) {
+      strModelo = strModelo.replace('x', digito);
+    }
+    resultado = strModelo;
+  }
+  return resultado;
+}
+
+
+
+// Requisito 12:
+
+const triangleCheck = (lineA, lineB, lineC) => {
+  if (lineA < lineB + lineC && lineA > Math.abs(lineB - lineC)) {
+    return true;
+  }
+  if (lineB < lineA + lineC && lineB > Math.abs(lineA - lineC)) {
+    return true;
+  } if (lineC < lineA + lineB && lineC > Math.abs(lineA - lineB)) {
+    return true;
+  } return false;
+}
+
+// Requisito 13:
+
+const hydrate = (bebida) => {
+  const arrayNumeros = bebida.match(/\d+/g);
+  let numeroDeBebidas = 0;
+  for (const num of arrayNumeros) {
+    numeroDeBebidas += Number(num);
+  }
+  let agua = `${numeroDeBebidas} `;
+  agua += numeroDeBebidas > 1 ? 'copos de água' : 'copo de água';
+  return agua;
+};
