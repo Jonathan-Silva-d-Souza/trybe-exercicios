@@ -62,7 +62,7 @@ const books = [
   ];
 // função para descobrir qual o nome do author que nasceu no ano 1947:
 
-const expectResult = 'Stephen King';
+
 const authorBornIn1947 = () => {
   return books.find((book) => book.author.birthYear === 1947).author.name;
 };
@@ -97,4 +97,8 @@ const someBookWasReleaseOnThe80s = () => {
   return books.some((book) => book.releaseYear >= 1980 && book.releaseYear <= 1989);
 };
 
-console.log(someBookWasReleaseOnThe80s());
+// função que retorne true, caso nenhuma pessoa autora tenha nascido no mesmo ano, e false, caso contrário.
+
+const authorUnique = () => {
+  return books.every((book) => !books.some((bookSome) => (bookSome.author.birthYear === book.author.birthYear) && (bookSome.author.name !== book.author.name)));
+}
