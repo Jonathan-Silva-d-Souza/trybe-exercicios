@@ -1,0 +1,18 @@
+{
+  "name": "dia-2_js-assincrono-promises-e-fetch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "barabam": "vite --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vite": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.36.0"
+  }
+}
